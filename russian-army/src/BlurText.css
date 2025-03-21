@@ -1,0 +1,41 @@
+.blur-text.welcome {
+    font-size: 6rem; /* OGROMNO */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px; /* Možeš smanjiti ako želiš da bude gore */
+}
+
+.blur-text.god {
+    font-size: 2rem; /* Manji font */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: -20px; /* Manji razmak od gornjeg teksta */
+}
+
+  
+  .blur-text span {
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  /* Efekat kad je tekst vidljiv */
+  .blur-text.appear {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Efekat kad tekst nestaje */
+  .blur-text.disappear {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
