@@ -9,10 +9,11 @@ const NewsSection = () => {
 
   const fetchNews = async () => {
     try {
+      
       const response = await axios.get('https://newsapi.org/v2/everything', {
         params: {
           q: 'Russia',
-          apiKey: '2b9b8be151a04a4d960312ad2eb86088',
+          apiKey: process.env.REACT_APP_NEWS_API_KEY || '2b9b8be151a04a4d960312ad2eb86088', 
         },
       });
       setNews(response.data.articles);
@@ -30,7 +31,7 @@ const NewsSection = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       fetchNews();
-    }, 1800000);
+    }, 1800000); // 30 minuta
 
     return () => clearInterval(intervalId);
   }, []);
@@ -62,7 +63,9 @@ const NewsSection = () => {
               </li>
             ))}
           </ul>
-        </div>  </div></>
+        </div>
+      </div>
+    </>
   );
 };
 
